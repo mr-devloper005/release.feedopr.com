@@ -1,0 +1,119 @@
+﻿'use client'
+
+import { useState } from 'react'
+import Image from 'next/image'
+import { PageShell } from '@/components/shared/page-shell'
+import { Card, CardContent } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog'
+import { useToast } from '@/components/ui/use-toast'
+import { mockPressAssets, mockPressCoverage } from '@/data/mock-data'
+
+export default function PressPage() {
+  const { toast } = useToast()
+  const [activeAssetId, setActiveAssetId] = useState<string | null>(null)
+  const activeAsset = mockPressAssets.find((asset) => asset.id === activeAssetId)
+
+  return (
+    <PageShell
+      title="Press"
+      description="Logos, brand notes, and where we have been mentioned—kept in one place for busy newsrooms."
+    >
+      <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <Card className="border-border/60 bg-card/60 shadow-sm backdrop-blur-sm">
+          <CardContent className="space-y-4 p-6 sm:p-8">
+            <h2 className="font-display text-xl font-semibold text-foreground">Press kit</h2>
+            <p className="text-sm text-muted-foreground">
+              Use these assets for accurate coverage. When in doubt, use the full-color mark on dark fields and the
+              provided wordmark on light fields.
+            </p>
+            <div className="grid gap-3">
+              {mockPressAssets.map((asset) => (
+                <div key={asset.id} className="ep-glass rounded-xl px-4 py-3">
+                  <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                    <div>
+                      <p className="text-sm font-medium text-foreground">{asset.title}</p>
+                      <p className="text-xs text-muted-foreground">{asset.description}</p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary">{asset.fileType}</Badge>
+                      <Button size="sm" variant="outline" onClick={() => setActiveAssetId(asset.id)}>
+                        Preview
+                      </Button>
+                      <Button
+                        size="sm"
+                        onClick={() =>
+                          toast({
+                            title: 'Download started',
+                            description: `${asset.title} is downloading.`,
+                          })
+                        }
+                      >
+                        Download
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+        <div className="space-y-4">
+          {mockPressCoverage.map((item) => (
+            <Card
+              key={item.id}
+              className="border-border/60 bg-card/50 transition-transform hover:-translate-y-0.5"
+            >
+              <CardContent className="p-6">
+                <div className="text-xs uppercase tracking-wide text-muted-foreground">{item.outlet}</div>
+                <p className="mt-2 text-sm text-foreground">{item.headline}</p>
+                <p className="mt-2 text-xs text-muted-foreground">{item.date}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      <Dialog open={Boolean(activeAsset)} onOpenChange={() => setActiveAssetId(null)}>
+        <DialogContent className="max-w-3xl">
+          <DialogHeader>
+            <DialogTitle>{activeAsset?.title}</DialogTitle>
+          </DialogHeader>
+          {activeAsset?.previewUrl && (
+            <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-border bg-muted">
+              <Image
+                src={activeAsset.previewUrl}
+                alt={activeAsset.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+          )}
+          <p className="text-sm text-muted-foreground">{activeAsset?.description}</p>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setActiveAssetId(null)}>
+              Close
+            </Button>
+            <Button
+              onClick={() =>
+                toast({
+                  title: 'Download started',
+                  description: `${activeAsset?.title} is downloading.`,
+                })
+              }
+            >
+              Download {activeAsset?.fileType}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </PageShell>
+  )
+}
