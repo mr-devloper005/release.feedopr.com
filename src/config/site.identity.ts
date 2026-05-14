@@ -1,10 +1,10 @@
 export const siteIdentity = {
   code: process.env.NEXT_PUBLIC_SITE_CODE || 't25xaz0chp',
   name: process.env.NEXT_PUBLIC_SITE_NAME || 'Release Feedopr',
-  tagline: process.env.NEXT_PUBLIC_SITE_TAGLINE || 'Independent media updates',
+  tagline: process.env.NEXT_PUBLIC_SITE_TAGLINE || 'Official Press Releases & Media Announcements',
   description:
     process.env.NEXT_PUBLIC_SITE_DESCRIPTION ||
-    'A media-distribution newsroom for announcements, coverage, and press updates on Release Feedopr.',
+    'Release Feedopr is your authoritative source for official press releases, corporate announcements, media advisories, and breaking news from organizations worldwide.',
   domain: process.env.NEXT_PUBLIC_SITE_DOMAIN || 'release.feedopr.com',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://release.feedopr.com',
   ogImage: process.env.NEXT_PUBLIC_SITE_OG_IMAGE || '/og-default.png',
