@@ -2,56 +2,56 @@ import type { TaskKey } from '@/lib/site-config'
 
 export const siteContent = {
   navbar: {
-    tagline: 'News desk · elitepressa.com',
+    tagline: 'Official Press Releases & Media Advisories · PressWire Hub',
   },
   footer: {
-    tagline: 'Accountable coverage without the noise.',
+    tagline: 'Trusted press distribution for organizations worldwide.',
   },
   hero: {
-    badge: 'Latest wire',
-    title: ['Headlines that respect your attention.', 'Context first—noise last.'],
+    badge: 'Breaking Release',
+    title: ['Official press releases delivered to the world.', 'Credible. Timely. Authoritative.'],
     description:
-      'Elite Pressa publishes concise updates and explainers—structured like a newsroom, paced like a modern reader expects.',
+      'PressWire Hub is the definitive platform for official press releases, corporate announcements, media advisories, and breaking news from organizations worldwide.',
     primaryCta: {
-      label: 'Open the updates desk',
+      label: 'View All Press Releases',
       href: '/release',
     },
     secondaryCta: {
-      label: 'Talk to the desk',
+      label: 'Submit a Release',
       href: '/contact',
     },
-    searchPlaceholder: 'Search coverage',
-    focusLabel: 'Now',
-    featureCardBadge: 'Field note',
-    featureCardTitle: 'New posts surface on the front page first.',
+    searchPlaceholder: 'Search press releases',
+    focusLabel: 'Latest Releases',
+    featureCardBadge: 'Press Release',
+    featureCardTitle: 'New releases surface on the front page first.',
     featureCardDescription:
-      'The homepage is built for scanning: lead story, signal stack, then a denser grid for deeper reading.',
+      'The homepage is built for media professionals: lead release, wire stack, then a full archive grid for research.',
   },
   home: {
     metadata: {
-      title: 'Elite Pressa — reporting desk & updates',
+      title: 'PressWire Hub — Official Press Releases & Media Announcements',
       description:
-        'Independent headlines, explainers, and dispatch-style updates from Elite Pressa.',
-      openGraphTitle: 'Elite Pressa — reporting desk & updates',
+        'Official press releases, corporate announcements, media advisories, and breaking news from organizations worldwide.',
+      openGraphTitle: 'PressWire Hub — Official Press Releases & Media Announcements',
       openGraphDescription:
-        'Editorial updates and press-style coverage with a clean reading layout.',
-      keywords: ['Elite Pressa', 'headlines', 'news desk', 'updates', 'reporting'],
+        'Your authoritative source for official press releases and corporate media communications.',
+      keywords: ['press release', 'media advisory', 'corporate announcement', 'news wire', 'PressWire Hub', 'media distribution'],
     },
-    introBadge: 'Our approach',
-    introTitle: 'Built for clarity under deadline.',
+    introBadge: 'Why PressWire Hub',
+    introTitle: 'Built for media professionals and communications teams.',
     introParagraphs: [
-      'We keep the front page legible: one lead, a tight spotlight column, and a wire section for everything else.',
-      'Story pages stay reader-first—no clutter, no theatrical chrome—so the reporting stays in focus.',
-      'If you need the full archive, the updates desk lists every published item with quick filters.',
+      'We keep the front page focused: one lead release, a tight wire column, and a full archive for deeper research.',
+      'Release pages stay reader-first—clean typography, no clutter—so the announcement stays in focus.',
+      'If you need the full archive, the press desk lists every published release with quick category filters.',
     ],
     sideBadge: 'What you get',
     sidePoints: [
-      'Dispatch-style updates with consistent typography.',
-      'Archive routes that stay fast to scan on mobile.',
-      'Search across the site when you know what you are looking for.',
+      'Official press releases with consistent, professional formatting.',
+      'Archive routes that stay fast to scan on mobile and desktop.',
+      'Search across all releases when you know what you are looking for.',
     ],
     primaryLink: {
-      label: 'Browse updates',
+      label: 'Browse Press Releases',
       href: '/release',
     },
     secondaryLink: {
@@ -60,27 +60,27 @@ export const siteContent = {
     },
   },
   cta: {
-    badge: 'Reach the desk',
-    title: 'Have a tip, correction, or partnership note?',
+    badge: 'Media Inquiries',
+    title: 'Have a press release, media inquiry, or partnership note?',
     description:
-      'Use the contact page for editorial inquiries. We read everything—volume permitting.',
+      'Use the contact page for media and editorial inquiries. Our team reviews all submissions.',
     primaryCta: {
-      label: 'Contact',
+      label: 'Contact Us',
       href: '/contact',
     },
     secondaryCta: {
-      label: 'Search coverage',
+      label: 'Search Releases',
       href: '/search',
     },
   },
-  taskSectionHeading: 'Wire & updates',
-  taskSectionDescriptionSuffix: 'Newest dispatches from the desk.',
+  taskSectionHeading: 'Press Wire',
+  taskSectionDescriptionSuffix: 'Latest official releases from the wire.',
 } as const
 
 export const taskPageMetadata: Record<Exclude<TaskKey, 'comment' | 'org' | 'social'>, { title: string; description: string }> = {
   article: {
     title: 'Articles',
-    description: 'Long-form reporting and essays.',
+    description: 'Long-form press coverage and feature articles.',
   },
   listing: {
     title: 'Listings',
@@ -96,19 +96,19 @@ export const taskPageMetadata: Record<Exclude<TaskKey, 'comment' | 'org' | 'soci
   },
   profile: {
     title: 'Profiles',
-    description: 'Public profiles and bylines.',
+    description: 'Public profiles and organization pages.',
   },
   sbm: {
     title: 'Bookmarks',
-    description: 'Curated links and resources.',
+    description: 'Curated links and media resources.',
   },
   pdf: {
     title: 'Resources',
-    description: 'PDFs and downloadable files.',
+    description: 'PDFs, media kits, and downloadable files.',
   },
   mediaDistribution: {
-    title: 'Updates desk',
-    description: 'Latest dispatches, briefs, and announcements.',
+    title: 'Press Releases',
+    description: 'Official press releases, media advisories, and corporate announcements.',
   },
 }
 
@@ -120,23 +120,23 @@ export const taskIntroCopy: Record<
   article: {
     title: 'Articles',
     paragraphs: [
-      'Long-form pieces live here when the article task is enabled—spaced for deep reading and slower headlines.',
+      'Long-form press coverage and feature articles for in-depth media reporting.',
     ],
     links: [{ label: 'Home', href: '/' }],
   },
   classified: { title: 'Classifieds', paragraphs: ['Short-form posts and notices.'], links: [{ label: 'Home', href: '/' }] },
-  image: { title: 'Images', paragraphs: ['Image-first posts and galleries.'], links: [{ label: 'Home', href: '/' }] },
-  profile: { title: 'Profiles', paragraphs: ['Profile pages and identity surfaces.'], links: [{ label: 'Home', href: '/' }] },
-  sbm: { title: 'Bookmarks', paragraphs: ['Curated saved links and references.'], links: [{ label: 'Home', href: '/' }] },
-  pdf: { title: 'Resources', paragraphs: ['Downloadable files and documents.'], links: [{ label: 'Home', href: '/' }] },
-  social: { title: 'Social', paragraphs: ['Short updates and activity.'], links: [{ label: 'Home', href: '/' }] },
+  image: { title: 'Images', paragraphs: ['Image-first posts and media galleries.'], links: [{ label: 'Home', href: '/' }] },
+  profile: { title: 'Profiles', paragraphs: ['Organization profiles and media contact pages.'], links: [{ label: 'Home', href: '/' }] },
+  sbm: { title: 'Bookmarks', paragraphs: ['Curated media resources and reference links.'], links: [{ label: 'Home', href: '/' }] },
+  pdf: { title: 'Resources', paragraphs: ['Media kits, press packs, and downloadable documents.'], links: [{ label: 'Home', href: '/' }] },
+  social: { title: 'Social', paragraphs: ['Short updates and social activity.'], links: [{ label: 'Home', href: '/' }] },
   comment: { title: 'Comments', paragraphs: ['Commentary and response posts.'], links: [{ label: 'Home', href: '/' }] },
-  org: { title: 'Organizations', paragraphs: ['Organization pages and entities.'], links: [{ label: 'Home', href: '/' }] },
+  org: { title: 'Organizations', paragraphs: ['Organization pages and corporate entities.'], links: [{ label: 'Home', href: '/' }] },
   mediaDistribution: {
-    title: 'Updates desk',
+    title: 'Press Releases',
     paragraphs: [
-      'This is the main publishing lane for Elite Pressa: briefs, advisories, and field notes in a single scannable feed.',
-      'Use categories to focus a topic, or jump into a story when the headline is enough context.',
+      'This is the official press release desk for PressWire Hub: corporate announcements, media advisories, and breaking news in a single scannable feed.',
+      'Use categories to filter by industry or topic, or jump directly into a release when the headline is enough context.',
     ],
     links: [
       { label: 'Home', href: '/' },
